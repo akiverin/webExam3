@@ -1,0 +1,178 @@
+@use "../utils/mixins" as m;
+@use "../utils/variables" as v;
+
+.profile {
+    background-image: url(../../images/bg-profile.png);
+    background-size: cover;
+    min-height: 100vh;
+}
+
+.profile__wrapper {
+    position: relative;
+    @include m.wrapper;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 0;
+}
+
+.profile__title {
+    font-family: 'Noto Serif';
+    font-weight: 700;
+    font-size: 4rem;
+    line-height: normal;
+    max-width: 800px;
+    margin: 40px auto;
+    @media screen and (max-width: 680px) {
+        font-size: 2.8rem;
+        max-width: 480px;
+        margin: 30px auto 20px;
+    }
+}
+
+.profile__list {
+    min-width: 240px;
+    max-width: 280px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    backdrop-filter: blur(16px);
+    border-radius: 16px;
+    background-color: rgba(40, 32, 91, 0.243);
+    padding: 18px;
+    margin-bottom: 20px;
+}
+
+.profile__item {
+    display: flex;
+    border-radius: 16px;
+    text-align: left;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+
+.profile__image {
+    width: 140px;
+    height: 140px;
+    margin: 20px 0;
+    object-fit: cover;
+    border-radius: 16px;
+    border: 1.6px solid v.$mywhite;
+}
+
+.profile__name {
+    font-family: 'Noto Serif';
+    font-size: 1.6rem;
+    line-height: normal;
+    font-weight: 400;
+
+}
+
+.profile__value {
+    font-family: 'Noto Serif';
+    font-weight: 600;
+    margin-left: 8px;
+    margin-right: 4px;
+    color: v.$myorange;
+    text-align: justify;
+    font-size: 1.5rem;
+    line-height: normal;
+}
+
+.profile__other {
+    display: flex;
+    font-weight: 500;
+    justify-content: space-between;
+    margin-top: 8px;
+    width: 100%;
+}
+
+.profile__coins {
+    display: flex;    
+    align-items: center;
+    font-size: 1.4rem;
+    color: v.$liyellow;
+    text-shadow: 1px 1px 1px v.$mycard;
+    &:before{
+        margin-right: 3px;
+        margin-top: 3px;
+        content: url(../../images/coin-icon.svg);
+    }
+}
+
+.profile__link {
+    text-decoration: none;
+    color: v.$liblue;
+    &:hover {
+        color: v.$mypink;
+    }
+}
+
+.profile__error {
+    font-weight: 500;
+    font-size: 1.8rem;
+    line-height: normal;
+    max-width: 460px;
+    margin: 10px auto;
+    color: v.$myorange
+}
+
+.profile__money {
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: normal;
+    max-width: 460px;
+    margin: 10px auto;
+    color: v.$mygreen;
+}
+
+.profile__actions {
+    display: flex;
+    justify-content: space-between;
+    min-width: 240px;
+    max-width: 280px;
+}
+
+.profile__button {
+    border: 1.8px solid v.$liyellow;
+    background: none;
+    border-radius: 16px;
+    padding: 6px 10px;
+    color: v.$liyellow;
+    text-transform: uppercase;
+    font-size: 1.12rem;
+    font-weight: 600;
+    cursor: pointer;
+
+    &_delete {
+        color: v.$myorange;
+        border: 1.8px dotted v.$myorange;
+    }
+
+    &_edit {
+        color: v.$liblue;
+        border: 1.8px dotted v.$liblue;
+    }
+}
+
+.profile__form {
+    min-width: 240px;
+    max-width: 280px;
+}
+
+.form__label {
+    color: v.$mywhite;
+    font-size: 1.2rem;
+    line-height: normal;
+}
+
+.form__sublabel {
+    font-size: 1.05rem;
+    color: v.$liliblue;
+}

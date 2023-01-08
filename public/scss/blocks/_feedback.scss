@@ -1,0 +1,7 @@
+@use "../utils/mixins" as m;
+@use "../utils/variables" as v;
+
+.feedback__wrapper {
+    @include m.wrapper;
+    margin-top: 80px;
+}

@@ -1,0 +1,44 @@
+@use "../utils/mixins"as m;
+@use "../utils/variables"as v;
+
+.paginate {
+    margin: 24px 0 16px;
+    max-width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.paginate__disable {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.paginate__list {
+    list-style: none;
+    display: flex;
+    gap: 6px;
+}
+
+.paginate__item {
+    width: 20px;
+    height: 20px;
+
+}
+
+.paginate__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+    border-radius: 50%;
+    border: 1px solid white;
+    color: white;
+    text-decoration: none;
+
+    &--disable {
+        opacity: 0.5;
+        pointer-events: none;
+    }
+}
