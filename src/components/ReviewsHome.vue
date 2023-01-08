@@ -1,5 +1,5 @@
 <template>
-    <section class="reviews">
+    <div class="reviews">
         <div class="reviews__wrapper">
             <p class="reviews__subtitle">Рецензии игроков</p>
             <h2 class="reviews__title">Комментарии наших пользователей</h2>
@@ -10,22 +10,14 @@
                 </li>
             </ul>
         </div>
-    </section>
+    </div>
 </template>
 
 <script>
-import reviewsFile from "@/assets/reviews.json";
 
     export default {
         name: "ReviewsComponent",
-        data() {
-            return {
-                reviews: [],
-            };
-        },
-        mounted() {
-            this.reviews = reviewsFile;
-        },
+        props: ['reviews'],
     };
 </script>
 

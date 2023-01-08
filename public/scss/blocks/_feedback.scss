@@ -1,6 +1,15 @@
 @use "../utils/mixins" as m;
 @use "../utils/variables" as v;
 
+.comments {
+    display: grid;
+    grid-template-columns: 4fr 3fr;
+    @media screen and (max-width: 860px) {
+    display: block;
+
+    }
+}
+
 .feedback__wrapper {
     @include m.wrapper;
     margin-top: 80px;

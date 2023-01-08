@@ -1977,6 +1977,16 @@
   pointer-events: none;
 }
 
+.comments {
+  display: grid;
+  grid-template-columns: 4fr 3fr;
+}
+@media screen and (max-width: 860px) {
+  .comments {
+    display: block;
+  }
+}
+
 .feedback__wrapper {
   max-width: 1440px;
   width: 100%;
@@ -2173,8 +2183,20 @@
 .reviews__list {
   list-style: none;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  flex-direction: column;
+  max-height: 320px;
+  overflow-y: scroll;
+  max-width: 100%;
+  align-items: center;
+}
+@media screen and (max-width: 860px) {
+  .reviews__list {
+    max-height: 420px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 12px;
+    justify-content: center;
+  }
 }
 
 .reviews__item {

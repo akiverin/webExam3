@@ -545,8 +545,10 @@
                 </ul>
             </div>
         </section>
-        <FeedbackHome />
-        <ReviewsHome />
+        <section class="comments">
+            <FeedbackHome @send-comment="getComment"/>
+            <ReviewsHome :reviews="this.reviews"/>
+        </section>
         <section class="locations">
             <div class="locations__wrapper">
                 <div class="locations__info">
@@ -566,6 +568,9 @@
 import Vue from "vue";
 import axios from "axios";
 import VueAxios from "vue-axios";
+import reviewsFile from "@/assets/reviews.json";
+
+
 import FeedbackHome from '@/components/FeedbackHome'
 import ReviewsHome from '@/components/ReviewsHome'
 Vue.use(VueAxios, axios);
@@ -580,12 +585,23 @@ export default {
     FeedbackHome,
     ReviewsHome,
   },
+  data(){
+    return {
+        reviews: {},
+    }
+  },
   methods: {
     exitUser(){
         localStorage.clear();
         window.location.reload();
     },
+    getComment(obj){
+        this.reviews.unshift(obj)
+    }
   },
+  mounted() {
+    this.reviews = reviewsFile;
+},
 }
 </script>
 

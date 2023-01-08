@@ -44,8 +44,18 @@
 .reviews__list {
     list-style: none;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    flex-direction: column;
+    max-height: 320px;
+    overflow-y: scroll;
+    max-width: 100%;
+    align-items: center;
+    @media screen and (max-width: 860px) {
+        max-height: 420px;
+        flex-wrap: wrap;
+        flex-direction: row;
+        gap: 12px;
+        justify-content: center;
+    }
 }
 
 .reviews__item {
