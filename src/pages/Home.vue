@@ -546,6 +546,7 @@
             </div>
         </section>
         <FeedbackHome />
+        <ReviewsHome />
         <section class="locations">
             <div class="locations__wrapper">
                 <div class="locations__info">
@@ -566,6 +567,7 @@ import Vue from "vue";
 import axios from "axios";
 import VueAxios from "vue-axios";
 import FeedbackHome from '@/components/FeedbackHome'
+import ReviewsHome from '@/components/ReviewsHome'
 Vue.use(VueAxios, axios);
 
 export default {
@@ -576,6 +578,7 @@ export default {
   },
   components: {
     FeedbackHome,
+    ReviewsHome,
   },
   methods: {
     exitUser(){

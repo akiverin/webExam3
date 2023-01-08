@@ -1,0 +1,75 @@
+@use "../utils/mixins" as m;
+@use "../utils/variables" as v;
+
+.reviews__wrapper {
+    @include m.wrapper;
+    margin-top: 80px;
+}
+
+.reviews__subtitle {
+    text-align: center;
+    text-transform: uppercase;
+    color: v.$mywhite;
+    font-weight: 600;
+    font-size: 1.4rem;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:after {
+        padding: 0 4px;
+        height: 22px;
+        content: url(../../images/line.svg); 
+    }
+    &:before { 
+        padding: 0 4px;
+        height: 22px;
+        content: url(../../images/line.svg); 
+    }
+}
+
+.reviews__title {
+    text-align: center;
+    font-family: 'Noto Serif';
+    font-weight: 700;
+    font-size: 3.2rem;
+    line-height: 4.8rem;
+    margin: 16px auto 54px auto;
+    @media screen and (max-width: 680px) {
+        font-size: 3.2rem;
+    }
+}
+
+.reviews__list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.reviews__item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 280px;
+    -webkit-backdrop-filter: blur(22px);
+    backdrop-filter: blur(22px);
+    margin-bottom: 12px;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.842);
+    padding: 12px 18px;
+}
+
+.reviews__name {
+    font-weight: 600;
+    font-size: 1.9rem;
+    line-height: normal;
+    text-align: left;
+    font-family: "Noto Serif";
+}
+
+.reviews__comment {
+    font-size: 1.4rem;
+}
