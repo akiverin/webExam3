@@ -561,6 +561,7 @@
                 <img src="/images/banner.png" alt="Banner for locations" class="locations__image">
             </div>
         </section>
+        <LevelsHome :levels="this.levels" />
     </main>
 </template>
 
@@ -569,10 +570,12 @@ import Vue from "vue";
 import axios from "axios";
 import VueAxios from "vue-axios";
 import reviewsFile from "@/assets/reviews.json";
+import levelsFile from "@/assets/levels.json";
 
 
 import FeedbackHome from '@/components/FeedbackHome'
 import ReviewsHome from '@/components/ReviewsHome'
+import LevelsHome from '@/components/LevelsHome'
 Vue.use(VueAxios, axios);
 
 export default {
@@ -584,10 +587,12 @@ export default {
   components: {
     FeedbackHome,
     ReviewsHome,
+    LevelsHome,
   },
   data(){
     return {
-        reviews: {},
+        reviews: [],
+        levels: [],
     }
   },
   methods: {
@@ -597,10 +602,11 @@ export default {
     },
     getComment(obj){
         this.reviews.unshift(obj)
-    }
+    },
   },
   mounted() {
     this.reviews = reviewsFile;
+    this.levels = levelsFile;
 },
 }
 </script>
