@@ -2288,7 +2288,7 @@
   font-weight: 700;
   font-size: 3.2rem;
   line-height: 4.8rem;
-  margin: 16px auto 54px auto;
+  margin: 16px auto 34px auto;
 }
 @media screen and (max-width: 680px) {
   .levels-list__title {
@@ -2300,7 +2300,7 @@
   list-style: none;
   display: flex;
   flex-direction: column;
-  max-height: 360px;
+  max-height: 460px;
   overflow-y: scroll;
   max-width: 100%;
   gap: 12px;
@@ -2348,7 +2348,13 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 12px;
-  margin-bottom: 16px;
+  margin-bottom: 36px;
+  border-radius: 16px 16px 0 0;
+  border: 1px solid #30313F;
+  border-bottom: 0;
+  padding: 16px 8px;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .levels-list__field {
@@ -2356,6 +2362,20 @@
   flex-direction: column;
   gap: 4px;
   font-size: 1.4rem;
+}
+.levels-list__field_row {
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.levels-list__checkboxs {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
 }
 
 .levels-list__input, .levels-list__select {
@@ -2365,9 +2385,16 @@
   color: #fff;
   border-radius: 4px;
 }
+.levels-list__input:hover, .levels-list__select:hover {
+  filter: brightness(115%);
+}
 
 .levels-list__select {
   cursor: pointer;
+}
+
+.levels-list__input {
+  min-width: 220px;
 }
 
 .levelsItem_easy {
@@ -2380,6 +2407,47 @@
 
 .levelsItem_hard {
   border: 1px solid #F68E5F;
+}
+
+.levels-list__coins {
+  display: flex;
+  align-items: center;
+  font-size: 1.4rem;
+  color: #fffab6;
+  text-shadow: 1px 1px 1px #20202E;
+}
+.levels-list__coins:before {
+  margin-right: 3px;
+  margin-top: 3px;
+  content: url(../../images/coin-icon.svg);
+}
+
+.levels-list__details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+.levels-list__button {
+  padding: 0.5rem 0.8rem;
+  cursor: pointer;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(../../images/button-bg.jpg);
+  border: 1px solid transparent;
+  border-radius: 100px;
+  text-decoration: none;
+  color: #fff;
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.4;
+  vertical-align: middle;
+}
+.levels-list__button:hover {
+  filter: brightness(115%);
 }
 
 /* Invisible */
