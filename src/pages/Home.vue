@@ -547,7 +547,7 @@
         </section>
         <section class="comments">
             <FeedbackHome @send-comment="getComment"/>
-            <ReviewsHome :reviews="this.reviews"/>
+            <ReviewsHome :reviews="this.allComments"/>
         </section>
         <section class="locations">
             <div class="locations__wrapper">
@@ -566,17 +566,11 @@
 </template>
 
 <script>
-import Vue from "vue";
-import axios from "axios";
-import VueAxios from "vue-axios";
-import reviewsFile from "@/assets/reviews.json";
 import levelsFile from "@/assets/levels.json";
-
 
 import FeedbackHome from '@/components/FeedbackHome'
 import ReviewsHome from '@/components/ReviewsHome'
 import LevelsHome from '@/components/LevelsHome'
-Vue.use(VueAxios, axios);
 
 export default {
   name: 'HomePage',
@@ -591,11 +585,18 @@ export default {
   },
   data(){
     return {
-        reviews: [],
         levels: [],
     }
   },
+  computed: {
+    allComments(){
+        return this.$store.getters.allComments;
+    }
+  },
   methods: {
+    addComments(){
+        return this.$store.getters.addComment;
+    },
     exitUser(){
         localStorage.clear();
         window.location.reload();
@@ -608,13 +609,9 @@ export default {
         console.log('List Levels were update')
     }
   },
-  mounted() {
-    this.reviews = reviewsFile;
+  async mounted() {
     this.levels = levelsFile;
-},
+    this.$store.dispatch('fetchComments');
+    },
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-</style>

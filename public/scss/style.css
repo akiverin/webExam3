@@ -1245,6 +1245,72 @@
   text-shadow: 1px 1px 1px #20202E;
 }
 
+.level__form {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+
+.level__field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 1.4rem;
+  text-align: left;
+}
+.level__field_row {
+  flex-direction: row;
+  align-items: center;
+}
+
+.level__input, .level__select {
+  padding: 6px 8px;
+  border: #30313F;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  border-radius: 4px;
+}
+.level__input:hover, .level__select:hover {
+  filter: brightness(115%);
+}
+
+.level__actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+.level__button {
+  font-size: 1.25rem;
+  padding: 0.5rem 2rem;
+  cursor: pointer;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 100px;
+  background-image: url(../../images/button-bg.jpg);
+  border: none;
+  border-radius: 0.8rem;
+  color: #fff4e2;
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.4;
+  text-align: center;
+}
+.level__button:hover {
+  filter: brightness(115%);
+}
+.level__button_save {
+  border: 1px solid #61FFDA;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  align-self: center;
+}
+
 .enemies {
   background-image: url(../../images/bg-enemies.png);
   background-size: cover;

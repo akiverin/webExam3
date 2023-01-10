@@ -20,6 +20,8 @@
 </template>
   
 <script>
+import { mapActions } from 'vuex'
+
 export default {
     name: "FeedbackComponent",
     data() {
@@ -29,14 +31,18 @@ export default {
         };
     },
     methods: {
+        ...mapActions(['addComments']),
         SendComment() {
             (this.name != '' & this.comment != '') ? this.newComment() : console.log('не прошло валидацию')
         },
         newComment() {
-            this.$emit('send-comment', { 'name': this.name, 'comment': this.comment });
+            this.addComments( {
+                name: this.name, 
+                comment: this.comment
+            })
             this.name = '';
             this.comment = '';
-        }
+        },
     },
 };
 </script>
