@@ -2,6 +2,7 @@ import VueRouter from 'vue-router'
 
 import Home from '@/pages/Home'
 import Levels from '@/pages/Levels'
+import ItemLevel from '@/pages/ItemLevel'
 import Registration from '@/pages/Registration'
 import Shop from '@/pages/Shop'
 import Profile from '@/pages/Profile'
@@ -12,6 +13,8 @@ import Authorization from '@/pages/Authorization'
 
 export default new VueRouter({
   mode: 'history',
+  // mode: "hash",
+  base: process.env.BASE_URL,
   routes: [
     {
       path: '/',
@@ -48,10 +51,16 @@ export default new VueRouter({
       name: 'profile',
       component: Profile,
     },
+    
     {
       path: '/levels',
       name: 'Levels',
       component: Levels,
+    },
+    {
+      path: '/levels/:id',
+      name: 'ItemLevel',
+      component: ItemLevel,
     },
     {
       path: '/:pathMatch(.*)*',

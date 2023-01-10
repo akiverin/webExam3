@@ -561,7 +561,7 @@
                 <img src="/images/banner.png" alt="Banner for locations" class="locations__image">
             </div>
         </section>
-        <LevelsHome :levels="this.levels" />
+        <LevelsHome :levels="this.levels" @reload-levels="updateLevels"/>
     </main>
 </template>
 
@@ -603,6 +603,10 @@ export default {
     getComment(obj){
         this.reviews.unshift(obj)
     },
+    updateLevels(){
+        this.levels = levelsFile;
+        console.log('List Levels were update')
+    }
   },
   mounted() {
     this.reviews = reviewsFile;

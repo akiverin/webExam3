@@ -1,0 +1,130 @@
+@use "../utils/mixins" as m;
+@use "../utils/variables" as v;
+
+.level {
+    background-image: url(../../images/bg-levels.png);
+    background-size: cover;
+    min-height: 100vh;
+}
+
+.level__wrapper {
+    position: relative;
+    @include m.wrapper;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 80px 0;
+    gap: 36px;
+}
+
+.level__title {
+    font-family: 'Noto Serif';
+    font-weight: 700;
+    font-size: 4rem;
+    line-height: normal;
+    max-width: 500px;
+    margin: 40px auto 10px;
+    @media screen and (max-width: 680px) {
+        font-size: 2.8rem;
+        max-width: 480px;
+        margin: 30px auto 0;
+    }
+}
+
+.level__description {
+    font-weight: 500;
+    font-size: 1.8rem;
+    line-height: normal;
+    max-width: 500px;
+    margin: 20px auto 50px;
+    color: v.$myorange
+}
+
+.level__field {
+    min-width: 180px;
+    max-width: 420px;
+    width: 100%;
+}
+
+.level__card {
+    position: relative;
+    background-image: url(https://cdn-hogwartslegacy.warnerbrosgames.com/static/game-info-frame-a.webp);
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 0;
+    overflow: hidden;
+    padding-top: 130.9375%;
+    perspective: 900px;
+    perspective-origin: 50%;
+}
+
+.level__image {
+    position: absolute;
+    -webkit-clip-path: polygon(0 25%,0 75%,50% 100%,100% 75%,100% 25%,50% 0);
+    clip-path: polygon(0 25%,0 75%,50% 100%,100% 75%,100% 25%,50% 0);
+    height: 70%;
+    object-fit: cover;
+    left: 10%;
+    top: 15%;
+    transition: transform .5s ease,opacity .3s;
+    transition-delay: .5s;
+    width: 80%;
+}
+
+.level__icon {
+    height: auto;
+    position: absolute;
+    transition: transform .5s ease,opacity .3s;
+    width: 16%;
+    &_right {
+        right: 10.5%;
+        top: 6.2%;
+        transition-delay: .7s;
+    }
+    &_left {
+        bottom: 6.2%;
+        left: 9.8%;
+        transition-delay: 1s;
+    }
+}
+
+.level__details {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.level__category {
+    font-size: 1.6rem;
+    color: v.$mywhite;
+    font-family: "Noto Serif";
+}
+
+.level__coins {
+    display: flex;    
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: v.$liyellow;
+    margin-top: 6px;
+    text-shadow: 1px 1px 1px v.$mycard;
+    &:before{
+        margin-right: 3px;
+        margin-top: 3px;
+        content: url(../../images/coin-icon.svg);
+    }
+}
+
+.level__difficulty {
+    display: flex;    
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: v.$mywhite;
+    margin-top: 6px;
+    text-shadow: 1px 1px 1px v.$mycard;
+}

@@ -88,9 +88,10 @@
 
 .levels-list__form {
     display: flex;
+    align-items: center;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 12px;
+    gap: 24px;
     margin-bottom: 36px;
     border-radius: 16px 16px 0 0;
     border: 1px solid v.$mygray;
@@ -192,4 +193,21 @@
     &:hover {
         filter: brightness(115%);
     }
+}
+
+.levels-list__update {
+    background: none;
+    border: none;
+    fill: white;
+    cursor: pointer;
+    height: max-content;
+    &:hover {
+        fill: v.$myyellow;
+
+    }
+}
+
+.levels-list__icon {
+    width: 24px;
+    height: 24px;
 }

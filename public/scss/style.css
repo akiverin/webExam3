@@ -1085,6 +1085,166 @@
   margin-top: 20px;
 }
 
+.level {
+  background-image: url(../../images/bg-levels.png);
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.level__wrapper {
+  position: relative;
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 80px 0;
+  gap: 36px;
+}
+@media screen and (max-width: 450px) {
+  .level__wrapper {
+    max-width: 350px;
+  }
+}
+@media screen and (max-width: 580px) and (min-width: 450px) {
+  .level__wrapper {
+    max-width: 420px;
+  }
+}
+@media screen and (max-width: 768px) and (min-width: 580px) {
+  .level__wrapper {
+    max-width: 540px;
+  }
+}
+@media screen and (max-width: 1000px) and (min-width: 768px) {
+  .level__wrapper {
+    max-width: 700px;
+  }
+}
+@media screen and (max-width: 1480px) and (min-width: 1000px) {
+  .level__wrapper {
+    max-width: 1200px;
+  }
+}
+
+.level__title {
+  font-family: "Noto Serif";
+  font-weight: 700;
+  font-size: 4rem;
+  line-height: normal;
+  max-width: 500px;
+  margin: 40px auto 10px;
+}
+@media screen and (max-width: 680px) {
+  .level__title {
+    font-size: 2.8rem;
+    max-width: 480px;
+    margin: 30px auto 0;
+  }
+}
+
+.level__description {
+  font-weight: 500;
+  font-size: 1.8rem;
+  line-height: normal;
+  max-width: 500px;
+  margin: 20px auto 50px;
+  color: #F68E5F;
+}
+
+.level__field {
+  min-width: 180px;
+  max-width: 420px;
+  width: 100%;
+}
+
+.level__card {
+  position: relative;
+  background-image: url(https://cdn-hogwartslegacy.warnerbrosgames.com/static/game-info-frame-a.webp);
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 0;
+  overflow: hidden;
+  padding-top: 130.9375%;
+  perspective: 900px;
+  perspective-origin: 50%;
+}
+
+.level__image {
+  position: absolute;
+  -webkit-clip-path: polygon(0 25%, 0 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0);
+  clip-path: polygon(0 25%, 0 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0);
+  height: 70%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  left: 10%;
+  top: 15%;
+  transition: transform 0.5s ease, opacity 0.3s;
+  transition-delay: 0.5s;
+  width: 80%;
+}
+
+.level__icon {
+  height: auto;
+  position: absolute;
+  transition: transform 0.5s ease, opacity 0.3s;
+  width: 16%;
+}
+.level__icon_right {
+  right: 10.5%;
+  top: 6.2%;
+  transition-delay: 0.7s;
+}
+.level__icon_left {
+  bottom: 6.2%;
+  left: 9.8%;
+  transition-delay: 1s;
+}
+
+.level__details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.level__category {
+  font-size: 1.6rem;
+  color: #fff;
+  font-family: "Noto Serif";
+}
+
+.level__coins {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: #fffab6;
+  margin-top: 6px;
+  text-shadow: 1px 1px 1px #20202E;
+}
+.level__coins:before {
+  margin-right: 3px;
+  margin-top: 3px;
+  content: url(../../images/coin-icon.svg);
+}
+
+.level__difficulty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: #fff;
+  margin-top: 6px;
+  text-shadow: 1px 1px 1px #20202E;
+}
+
 .enemies {
   background-image: url(../../images/bg-enemies.png);
   background-size: cover;
@@ -2345,9 +2505,10 @@
 
 .levels-list__form {
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 12px;
+  gap: 24px;
   margin-bottom: 36px;
   border-radius: 16px 16px 0 0;
   border: 1px solid #30313F;
@@ -2448,6 +2609,24 @@
 }
 .levels-list__button:hover {
   filter: brightness(115%);
+}
+
+.levels-list__update {
+  background: none;
+  border: none;
+  fill: white;
+  cursor: pointer;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+}
+.levels-list__update:hover {
+  fill: #e0d644;
+}
+
+.levels-list__icon {
+  width: 24px;
+  height: 24px;
 }
 
 /* Invisible */
