@@ -561,12 +561,12 @@
                 <img src="/images/banner.png" alt="Banner for locations" class="locations__image">
             </div>
         </section>
-        <LevelsHome :levels="this.levels" @reload-levels="updateLevels"/>
+        <LevelsHome :levels="this.allLevels" @reload-levels="updateLevels"/>
     </main>
 </template>
 
 <script>
-import levelsFile from "@/assets/levels.json";
+// import levelsFile from "@/assets/levels.json";
 
 import FeedbackHome from '@/components/FeedbackHome'
 import ReviewsHome from '@/components/ReviewsHome'
@@ -583,20 +583,15 @@ export default {
     ReviewsHome,
     LevelsHome,
   },
-  data(){
-    return {
-        levels: [],
-    }
-  },
   computed: {
     allComments(){
         return this.$store.getters.allComments;
+    },
+    allLevels(){
+        return this.$store.getters.allLevels;
     }
   },
   methods: {
-    addComments(){
-        return this.$store.getters.addComment;
-    },
     exitUser(){
         localStorage.clear();
         window.location.reload();
@@ -605,13 +600,13 @@ export default {
         this.reviews.unshift(obj)
     },
     updateLevels(){
-        this.levels = levelsFile;
+        this.$store.dispatch('fetchLevels');
         console.log('List Levels were update')
     }
   },
   async mounted() {
-    this.levels = levelsFile;
     this.$store.dispatch('fetchComments');
+    this.$store.dispatch('fetchLevels');
     },
 }
 </script>

@@ -33,7 +33,7 @@
                     </div>
                     <div class="level__field level__field_row">
                         <label for="inputLevelCoins">Награда пользователю</label>
-                        <input type="number" id="inputLevelCoins" v-model="coins" class="level__input" placeholder="Количество очков">
+                        <input type="number" id="inputLevelCoins" v-model="cost" class="level__input" placeholder="Количество очков">
                     </div>
                     <div class="level__field">
                         <label for="dropdownLevelsDifficulty">Сложность уровня</label>
@@ -52,7 +52,8 @@
 </template>
 
 <script>
-import levelsFile from "@/assets/levels.json";
+import levelsFile from "@/assets/main.json";
+import {mapMutations } from 'vuex'
 
 export default {
     name: "ItemLevelPage",
@@ -62,21 +63,31 @@ export default {
             activeForm: false,
             name: '',
             description: '',
-            coins: '',
+            cost: '',
             difficulty: '',
         }
     },
     methods: {
+        ...mapMutations([
+        'updateLevel'
+    ]),
         editLevel(){
             console.log('edit');
             this.activeForm = true;
             this.name = this.level.name;
             this.description = this.level.description;
-            this.coins = this.level.coins;
+            this.cost = this.level.cost;
             this.difficulty = this.level.difficulty;
         },
         saveLevel(){
             console.log('save')
+            this.updateLevel({
+                id: this.level.id,
+                name: this.name,
+                description: this.description,
+                cost: this.cost,
+                difficulty: this.difficulty,
+            })
         },
         deleteLevel(){
             console.log('delete')

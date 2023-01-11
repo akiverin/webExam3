@@ -1,73 +1,60 @@
 <template>
-  <body id="app">
-    <TheHeader :me="this.me" :token="this.token"/>
-    <router-view @get-token="getToken" @post-token="postToken" :me="this.me" :token="this.token"></router-view>
-    <TheFooter :me="this.me" :token="this.token"/>
-  </body>
+  <v-app>
+    <v-app-bar
+      app
+      color="primary"
+      dark
+    >
+      <div class="d-flex align-center">
+        <v-img
+          alt="Vuetify Logo"
+          class="shrink mr-2"
+          contain
+          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
+          transition="scale-transition"
+          width="40"
+        />
+
+        <v-img
+          alt="Vuetify Name"
+          class="shrink mt-1 hidden-sm-and-down"
+          contain
+          min-width="100"
+          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
+          width="100"
+        />
+      </div>
+
+      <v-spacer></v-spacer>
+
+      <v-btn
+        href="https://github.com/vuetifyjs/vuetify/releases/latest"
+        target="_blank"
+        text
+      >
+        <span class="mr-2">Latest Release</span>
+        <v-icon>mdi-open-in-new</v-icon>
+      </v-btn>
+    </v-app-bar>
+
+    <v-main>
+      <HelloWorld/>
+    </v-main>
+  </v-app>
 </template>
 
 <script>
-import TheHeader from '@/components/TheHeader'
-import TheFooter from '@/components/TheFooter'
-
-import Vue from 'vue'
-import axios from 'axios'
-import VueAxios from 'vue-axios'
-Vue.use(VueAxios, axios)
+import HelloWorld from './components/HelloWorld';
 
 export default {
   name: 'App',
-  data(){
-    return {
-      token: '',
-      me: {},
-    }
-  },
+
   components: {
-    TheHeader,
-    TheFooter
+    HelloWorld,
   },
-  methods: {
-    getToken (token){
-      this.token = token;
-      if (this.token != ""){
-        this.getMe()
-      }
-    },
-    postToken (){
-      return this.token;
-    },
-    getMe(){
-        let api = 'http://coursework.std-1725.ist.mospolytech.ru/api/users/me/';
-        axios ({
-        headers: {Authorization: `Bearer ${this.token}`},
-        method: 'get',
-        url: api,
-      })
-        .then((response) => {
-            if (response.data.is_activ == true){this.me = response.data;}
-        })
-        .catch(()=>{
-          this.me = {};
-        });
-    }
-  },
-  mounted() {
-    if (localStorage.token) {
-      this.token = localStorage.token;
-    }
-     
-    if (this.token != ""){
-        this.getMe()
-    }
-  },
-  watch: {
-    token(newToken) {
-      if (newToken!=""){
-        localStorage.token = newToken;
-        this.getMe()
-        }
-    }
-  },
-}
+
+  data: () => ({
+    //
+  }),
+};
 </script>
