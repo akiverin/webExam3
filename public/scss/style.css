@@ -87,6 +87,11 @@
     margin-top: 2px;
   }
 }
+.navigate__link_row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
 
 .header__menu {
   display: none;

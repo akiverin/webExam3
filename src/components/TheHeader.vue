@@ -27,18 +27,14 @@
                         <a href="https://github.com/akiverin/webExam3" class="navigate__link" target="_ blank">Git репозиторий</a>
                     </li>
                     <li>
-                        <v-badge
-                            avatar
-                            overlap
-                            row
-                        >
+                        <router-link :to="'/profile'" class="navigate__link navigate__link_row">
                             <v-avatar size="40" bordered >
                                 <v-img src="https://cdn.vuetifyjs.com/images/john.png"></v-img>
                             </v-avatar>
-                            <p class="font-weight-black">
-                                Black text.
+                            <p class="font-weight-black display-3">
+                                Петр Петров
                             </p>
-                        </v-badge>
+                    </router-link>
                     </li>
                     <!-- <li class="navigate__item">
                         <router-link :to="'/shop'" class="navigate__link">Магазин</router-link>
@@ -66,6 +62,7 @@
                 </ul>
             </nav>
             <button class="header__menu" @click="openMenu">
+                <p class="visually-hidden">Открыть меню</p>
                 <svg class="header__menu-icon" version="1.1" id="Icons" xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 32 32" xml:space="preserve">
                     <path d="M24,3H8C5.2,3,3,5.2,3,8v16c0,2.8,2.2,5,5,5h16c2.8,0,5-2.2,5-5V8C29,5.2,26.8,3,24,3z M22,21H10c-0.6,0-1-0.4-1-1
@@ -74,6 +71,7 @@
                 </svg>
             </button>
             <button class="header__close" @click="closeMenu">
+                <p class="visually-hidden">Закрыть меню</p>
                 <svg class="header__close-icon" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 252 252"
                     xml:space="preserve">

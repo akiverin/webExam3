@@ -13,6 +13,7 @@
                     dark
                     @click="reloadLevels"
                     >
+                        <p class="visually-hidden">Обновить список</p>
                         <v-icon color="green">mdi-cached</v-icon>
                     </v-btn>
                 <div class="levels-list__field">

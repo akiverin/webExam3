@@ -12,7 +12,7 @@
                     <v-text-field
                         v-model="name"
                         :rules="nameRules"
-                        label="Имя пользователя"
+                        label="Имя пользователя*"
                         solo
                         required
                         append-icon="mdi-account"
@@ -25,7 +25,7 @@
                     required
                     solo
                     name="CommentInput"
-                    label="Текст комментария"
+                    label="Текст комментария*"
                     ></v-textarea>
                 </div>
                 <!-- <div class="feedback__field">
