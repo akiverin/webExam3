@@ -9,6 +9,11 @@
   left: 0;
   right: 0;
 }
+@media print {
+  .header {
+    display: none;
+  }
+}
 
 .header__wrapper {
   display: flex;
@@ -19,6 +24,7 @@
 .navigate__list {
   display: flex;
   list-style: none;
+  align-items: center;
 }
 @media screen and (max-width: 900px) {
   .navigate__list {
@@ -117,6 +123,11 @@
 .footer {
   margin: 60px 0;
 }
+@media print {
+  .footer {
+    display: none;
+  }
+}
 
 .footer__wrapper {
   max-width: 1440px;
@@ -173,6 +184,7 @@
   font-family: "Noto Serif";
   font-size: 2.4rem;
   margin-bottom: 30px;
+  line-height: 130%;
 }
 
 .footer__buttons {
@@ -1128,6 +1140,12 @@
     max-width: 1200px;
   }
 }
+@media print {
+  .level__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
 
 .level__title {
   font-family: "Noto Serif";
@@ -1136,6 +1154,11 @@
   line-height: normal;
   max-width: 500px;
   margin: 40px auto 10px;
+}
+@media print {
+  .level__title {
+    color: black;
+  }
 }
 @media screen and (max-width: 680px) {
   .level__title {
@@ -1152,6 +1175,11 @@
   max-width: 500px;
   margin: 20px auto 50px;
   color: #F68E5F;
+}
+@media print {
+  .level__description {
+    color: black !important;
+  }
 }
 
 .level__field {
@@ -1193,6 +1221,11 @@
   transition: transform 0.5s ease, opacity 0.3s;
   width: 16%;
 }
+@media print {
+  .level__icon {
+    display: none;
+  }
+}
 .level__icon_right {
   right: 10.5%;
   top: 6.2%;
@@ -1219,6 +1252,11 @@
   color: #fff;
   font-family: "Noto Serif";
 }
+@media print {
+  .level__category {
+    color: black;
+  }
+}
 
 .level__coins {
   display: flex;
@@ -1228,6 +1266,12 @@
   color: #fffab6;
   margin-top: 6px;
   text-shadow: 1px 1px 1px #20202E;
+}
+@media print {
+  .level__coins {
+    color: black;
+    text-shadow: none;
+  }
 }
 .level__coins:before {
   margin-right: 3px;
@@ -1243,6 +1287,12 @@
   color: #fff;
   margin-top: 6px;
   text-shadow: 1px 1px 1px #20202E;
+}
+@media print {
+  .level__difficulty {
+    color: black;
+    text-shadow: none;
+  }
 }
 
 .level__form {
@@ -1299,6 +1349,11 @@
   font-weight: 400;
   line-height: 1.4;
   text-align: center;
+}
+@media print {
+  .level__button {
+    display: none;
+  }
 }
 .level__button:hover {
   filter: brightness(115%);
@@ -2707,8 +2762,8 @@
 html {
   width: 100%;
   max-width: 100%;
-  font-size: 62.5%;
-  line-height: 62.5%;
+  font-size: 62.5% !important;
+  line-height: 150% !important;
 }
 
 *,

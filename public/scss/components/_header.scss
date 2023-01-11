@@ -8,6 +8,9 @@
     z-index: 2;
     left: 0;
     right: 0;
+    @media print {
+        display: none;
+    }
 }
 
 .header__wrapper {
@@ -19,6 +22,7 @@
 .navigate__list{
     display: flex;
     list-style: none;
+    align-items: center;
     @media screen and (max-width: 900px) {
         text-align: center;
         padding: 6px;

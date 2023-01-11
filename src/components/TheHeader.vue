@@ -21,19 +21,24 @@
                         <router-link :to="'/levels/1'" class="navigate__link">Страница уровня</router-link>
                     </li>
                     <li class="navigate__item">
-                        <router-link :to="'/'" class="navigate__link">Json файл уровней</router-link>
-                    </li>
-                    <li class="navigate__item">
-                        <router-link :to="'/'" class="navigate__link">Json файл отзывов</router-link>
+                        <a href="https://63be6180e348cb07620d8be7.mockapi.io/comments" class="navigate__link" target="_ blank">Json файл</a>
                     </li>
                     <li class="navigate__item">
                         <a href="https://github.com/akiverin/webExam3" class="navigate__link" target="_ blank">Git репозиторий</a>
                     </li>
                     <li>
-                        <v-avatar
-                        color="primary"
-                        size="56"
-                        ></v-avatar>
+                        <v-badge
+                            avatar
+                            overlap
+                            row
+                        >
+                            <v-avatar size="40" bordered >
+                                <v-img src="https://cdn.vuetifyjs.com/images/john.png"></v-img>
+                            </v-avatar>
+                            <p class="font-weight-black">
+                                Black text.
+                            </p>
+                        </v-badge>
                     </li>
                     <!-- <li class="navigate__item">
                         <router-link :to="'/shop'" class="navigate__link">Магазин</router-link>
